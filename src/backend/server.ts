@@ -5,7 +5,6 @@ import 'dotenv/config'
 
 const app = express()
 app.use(router)
-
 app.use(express.static(path.join(__dirname, 'public')))
 
 export default app.listen(process.env.PORT, () => {
