@@ -1,13 +1,12 @@
 import express from 'express'
 import router from './router'
 import path from 'path'
+import 'dotenv/config'
 
 const app = express()
-
 app.use(router)
+app.use(express.static(path.join(__dirname, '../public')))
 
-app.use(express.static(path.join(__dirname, 'public')))
-
-export default app.listen(3000, () => {
-  console.log('App is running at http://localhost:3000')
+export default app.listen(process.env.PORT, () => {
+  console.log(`http://localhost:${process.env.PORT}`)
 })
