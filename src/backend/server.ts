@@ -1,8 +1,8 @@
 import express from 'express'
 import router from './router'
 import path from 'path'
-import { logger } from './utils/logger';
-import { ExpressLogger } from './utils/express_logger';
+import { logger } from './utils/logger'
+import { ExpressLogger } from './utils/express_logger'
 import 'dotenv/config'
 
 const app = express()
