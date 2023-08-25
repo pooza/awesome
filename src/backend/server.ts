@@ -13,17 +13,17 @@ app.use(express.urlencoded({extended: true}))
 app.use(express.static(path.join(__dirname, 'public')))
 
 const port = process.env.PORT || 3000
-const root_dir = path.dirname(__dirname)
+const rootDir = path.dirname(__dirname)
 
 initialize({
   app: app,
-  apiDoc: path.resolve(root_dir, 'openapi.yaml'),
+  apiDoc: path.resolve(rootDir, 'openapi.yaml'),
   validateApiDoc: true,
   operations,
 })
 
 export default app.listen(port, () => {
-  fs.readFile(path.join(root_dir, 'package.json'), (err, data) => {
+  fs.readFile(path.join(rootDir, 'package.json'), (err, data) => {
     if (err) {
       logger.error(err)
     } else {

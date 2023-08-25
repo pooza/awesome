@@ -19,13 +19,15 @@ paths:
         - utils
       responses:
         200:
-          description: 取得に成功した場合
+          description: 正常終了
           content:
             application/json:
               schema:
                 type: object
-                required:
-                  - version
+                properties:
+                  version:
+                    type: string
+                    example: 1.0.0
   /greeting:
     get:
       summary: 挨拶取得
@@ -36,10 +38,12 @@ paths:
         - utils
       responses:
         200:
-          description: 取得に成功した場合
+          description: 正常終了
           content:
             application/json:
               schema:
                 type: object
-                required:
-                  - greeting
+                properties:
+                  greeting:
+                    type: string
+                    example: こんにちは。
