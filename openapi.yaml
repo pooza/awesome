@@ -1,0 +1,45 @@
+openapi: 3.0.2
+info:
+  title: API定義書
+  description: express-openapiを試すための定義書
+  version: 1.0.0
+servers:
+  - url: 'http://localhost:3000'
+tags:
+  - name: utils
+    description: ユーティリティ
+paths:
+  /version:
+    get:
+      summary: バージョン取得
+      description: バージョンを取得する。
+      operationId: getVersion
+      parameters: []
+      tags:
+        - utils
+      responses:
+        200:
+          description: 取得に成功した場合
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - version
+  /greeting:
+    get:
+      summary: 挨拶取得
+      description: 挨拶を返す。
+      operationId: getGreeting
+      parameters: []
+      tags:
+        - utils
+      responses:
+        200:
+          description: 取得に成功した場合
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - greeting

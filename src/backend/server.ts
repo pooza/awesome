@@ -17,7 +17,7 @@ const root_dir = path.dirname(__dirname)
 
 initialize({
   app: app,
-  apiDoc: path.resolve(root_dir, 'openapi.json'),
+  apiDoc: path.resolve(root_dir, 'openapi.yaml'),
   validateApiDoc: true,
   operations,
 })
